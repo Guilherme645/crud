@@ -1,58 +1,6 @@
 {
   "clientes": [
     {
-      "id": "3",
-      "nome": "GUILHERME CARVALHO DA SILVA",
-      "email": "guilherme64513@gmail.com",
-      "telefone": "61984264979",
-      "endereco": {
-        "rua": "Quadra",
-        "numero": "14",
-        "cidade": "Brasília",
-        "estado": "DF",
-        "cep": "72425140"
-      }
-    },
-    {
-      "id": "4",
-      "nome": "GUILHERME CARVALHO DA SILVA",
-      "email": "guilherme64513@gmail.com",
-      "telefone": "61984264979",
-      "endereco": {
-        "rua": "Quadra",
-        "numero": "14",
-        "cidade": "Brasília",
-        "estado": "DF",
-        "cep": "72425140"
-      }
-    },
-    {
-      "id": "5",
-      "nome": "GUILHERME CARVALHO DA SILVA",
-      "email": "guilherme64513@gmail.com",
-      "telefone": "61984264979",
-      "endereco": {
-        "rua": "Quadra",
-        "numero": "14",
-        "cidade": "Brasília",
-        "estado": "DF",
-        "cep": "72425140"
-      }
-    },
-    {
-      "id": "6",
-      "nome": "GUILHERME CARVALHO DA SILVA",
-      "email": "guilherme64513@gmail.com",
-      "telefone": "61984264979",
-      "endereco": {
-        "rua": "Quadra",
-        "numero": "14",
-        "cidade": "Brasília",
-        "estado": "DF",
-        "cep": "72425140"
-      }
-    },
-    {
       "id": "7",
       "nome": "Mariana Lima",
       "email": "mariana.lima@example.com",
@@ -82,18 +30,51 @@
       "id": "9",
       "nome": "Patrícia Fernandes",
       "email": "patricia.fernandes@example.com",
-      "telefone": "(84) 98765-4321"
+      "telefone": "(84) 98765-4321",
+      "endereco": {
+        "rua": "copacabana",
+        "numero": "36",
+        "cidade": "rio de janeiro",
+        "estado": "rj",
+        "cep": "26374635"
+      }
     },
     {
-      "id": "10",
-      "nome": "GUILHERME CARVALHO DA SILVA",
+      "id": "fdbc",
+      "nome": "Maria Santos",
+      "email": "maria.santos@example.com",
+      "telefone": "(21) 99999-8888",
+      "endereco": {
+        "rua": "Avenida Central",
+        "numero": " 456",
+        "cidade": "Rio de Janeiro",
+        "estado": " RJ",
+        "cep": "20000-000"
+      }
+    },
+    {
+      "id": "9cb8",
+      "nome": "Carlos Oliveira",
+      "email": "carlos.oliveira@example.com",
+      "telefone": "(31) 98765-1234",
+      "endereco": {
+        "rua": "Praça das Palmeiras",
+        "numero": "789",
+        "cidade": "Belo Horizonte",
+        "estado": "MG",
+        "cep": "30000-000"
+      }
+    },
+    {
+      "id": "5e47",
+      "nome": "Guilherme ",
       "email": "guilherme64513@gmail.com",
       "telefone": "61984264979",
       "endereco": {
         "rua": "Quadra",
         "numero": "14",
         "cidade": "Brasília",
-        "estado": "DF",
+        "estado": "RJ",
         "cep": "72425140"
       }
     }

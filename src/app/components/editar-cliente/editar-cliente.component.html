@@ -1,31 +1,33 @@
 <form [formGroup]="form" (ngSubmit)="onSave()">
+  <mat-form-field>
+    <input matInput formControlName="nome" placeholder="Nome">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="email" placeholder="Email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="telefone" placeholder="Telefone">
+  </mat-form-field>
+   <mat-form-field>
+      <input matInput formControlName="cep" placeholder="CEP">
+    </mat-form-field>
+  <div formGroupName="endereco">
     <mat-form-field>
-      <input matInput formControlName="nome" placeholder="Nome">
+      <input matInput formControlName="rua" placeholder="Rua">
     </mat-form-field>
     <mat-form-field>
-      <input matInput formControlName="email" placeholder="Email">
+      <input matInput formControlName="numero" placeholder="Número">
+    </mat-form-field> 
+    <mat-form-field>
+      <input matInput formControlName="cidade" placeholder="Cidade">
     </mat-form-field>
     <mat-form-field>
-      <input matInput formControlName="telefone" placeholder="Telefone">
+      <input matInput formControlName="estado" placeholder="Estado">
     </mat-form-field>
-    <div formGroupName="endereco">
-      <mat-form-field>
-        <input matInput formControlName="rua" placeholder="Rua">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput formControlName="numero" placeholder="Número">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput formControlName="cidade" placeholder="Cidade">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput formControlName="estado" placeholder="Estado">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput formControlName="cep" placeholder="CEP">
-      </mat-form-field>
-    </div>
-    <button mat-button type="submit">Salvar</button>
+   
+  </div>
+  <div class="button-container">
+    <button mat-button type="submit" (click)="onSave()">Salvar</button>
     <button mat-button type="button" (click)="onClose()">Cancelar</button>
-  </form>
-  
+  </div>
+</form>

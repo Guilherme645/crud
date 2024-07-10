@@ -1,0 +1,57 @@
+/* Estilo geral do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Reduzir o espaçamento entre os campos */
+    padding: 10px;
+    max-width: 600px; /* Limita a largura máxima do formulário */
+    margin: 0 auto; /* Centraliza o formulário na página */
+  }
+  
+  /* Estilo dos campos de formulário do Angular Material */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 8px; /* Reduzir o espaçamento inferior dos campos */
+  }
+  
+  mat-form-field input {
+    height: 36px; /* Diminuir a altura dos campos de entrada */
+  }
+  
+  /* Estilo específico para o grupo de endereço */
+  div[formGroupName="endereco"] {
+    display: grid;
+    gap: 8px; /* Reduzir o espaçamento entre os campos de endereço */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Ajustar a largura mínima dos campos */
+  }
+  
+  /* Estilo dos botões */
+  button {
+    margin-top: 10px;
+    width: calc(50% - 4px); /* Ajustar a largura dos botões */
+    height: 36px; /* Ajustar a altura dos botões */
+  }
+  
+  /* Botão de cancelar */
+  button[type="button"] {
+    background-color: #83211a; /* Cor do botão de cancelar */
+    color: #ffffff; /* Cor do texto do botão */
+  }
+  
+  /* Botão de salvar */
+  button[type="submit"] {
+    background-color: #245a26; /* Cor do botão de salvar */
+    color: #ffffff; /* Cor do texto do botão */
+  }
+  
+  /* Adiciona um efeito de hover aos botões */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Contêiner para alinhar os botões horizontalmente */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  

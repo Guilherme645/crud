@@ -16,7 +16,7 @@
           Endereço <p-sortIcon field="quantity" />
         </th>
         <th style="width:20%">
-         Ações
+          <p-button  label="Adicionar" [text]="true" [raised]="true" severity="success" />
         </th>
       </tr>
     </ng-template>
@@ -31,8 +31,7 @@
           {{ client?.endereco?.estado }},
           {{ client?.endereco?.cep }}</td>
         <td>
-          <p-button icon="pi pi-plus" [rounded]="true" [text]="true" [raised]="true" severity="success" class="button-spacing"></p-button>
-          <p-button icon="pi pi-pencil" [rounded]="true" [text]="true" [raised]="true" severity="info" class="button-spacing"   (click)="abrirDialogoEditar(client)"></p-button>
+          <p-button icon="pi pi-pencil" [rounded]="true" [text]="true" [raised]="true" severity="info" class="button-spacing"   (click)="editClient(client)"></p-button>
           <p-button icon="pi pi-times" [rounded]="true" [text]="true" [raised]="true" severity="danger" (click)="deleteClient(client.id)"></p-button>
         </td>
       </tr>

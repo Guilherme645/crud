@@ -40,8 +40,8 @@ export class ClientService {
     const url = `${this.apiUrl}/clientes/${id}`;
     return this.http.put(url, clienteAtualizado);
   }
-   buscarPorId(id:number): Observable<Client>{
-     const url= `${this.apiUrl}/${id}`
-     return this.http.get<Client>(url)
-   }
+  criarCliente(cliente: Cliente): Observable<any> {
+    const url = `${this.apiUrl}/clientes`;
+    return this.http.post(url, cliente);
+  }
 }

@@ -12,6 +12,7 @@ import { ClientService } from 'src/app/services/client.service';
 export class EditarClienteComponent implements OnInit {
 
   form!: FormGroup; // Declarando explicitamente que form é do tipo FormGroup
+  loading = false; // Variable to indicate loading state
 
   constructor(
     private dialogRef: MatDialogRef<EditarClienteComponent>,
@@ -41,6 +42,7 @@ export class EditarClienteComponent implements OnInit {
 
   onSave(): void {
     if (this.form.valid) {
+      this.loading = true; // Start loading
       const clienteAtualizado: Cliente = {
         id: this.data.id,
         nome: this.form.value.nome,
@@ -57,20 +59,29 @@ export class EditarClienteComponent implements OnInit {
 
       if (clienteAtualizado.id) {
         this.clientService.editarCliente(clienteAtualizado.id, clienteAtualizado).subscribe(
-            () => {
-              this.dialogRef.close(clienteAtualizado);
-            },
-            (error) => {
-              console.error('Erro ao editar cliente:', error);
-            }
-          );
+          () => {
+            this.loading = false; // Stop loading
+            this.dialogRef.close(clienteAtualizado);
+            window.location.reload(); // Reload the entire page
+          },
+          (error) => {
+            this.loading = false; // Stop loading
+            console.error('Erro ao editar cliente:', error);
+            // Handle error feedback for user
+          }
+        );
+      } else {
+        this.loading = false; // Stop loading
+        console.error('ID do cliente não está definido.');
+        // Tratamento para o caso em que clienteAtualizado.id é undefined
+      }
     } else {
-      console.error('ID do cliente não está definido.');
-      // Tratamento para o caso em que clienteAtualizado.id é undefined
+      console.error('Formulário inválido.'); // Log form invalid
+      // Handle form invalid feedback for user
     }
   }
-}
-onClose(): void {
+
+  onClose(): void {
     this.dialogRef.close();
   }
 }

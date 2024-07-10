@@ -28,6 +28,7 @@ import { ExcluirClienteComponent } from './components/excluir-cliente/excluir-cl
 import {MatDialogModule} from '@angular/material/dialog';
 import { EditarClienteComponent } from './components/editar-cliente/editar-cliente.component';
 import { FormsModule } from '@angular/forms'; // Importe FormsModule aqui
+import { CriarClienteComponent } from './components/criar-cliente/criar-cliente.component';
 
 
 
@@ -41,6 +42,7 @@ import { FormsModule } from '@angular/forms'; // Importe FormsModule aqui
       SidebarComponent,
       ExcluirClienteComponent,
       EditarClienteComponent,
+      CriarClienteComponent
       
    ],
   imports: [
