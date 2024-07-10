@@ -17,8 +17,7 @@ export class TabelaComponent implements OnInit {
   private apiUrl = 'http://localhost:3000';
   dataSource: any;
   constructor(private clientService: ClientService, private http: HttpClient
-    ,private dialog: MatDialog
-  ) { }
+    ,private dialog: MatDialog,  ) { }
 
   ngOnInit(): void {
     this.clientService.getClient()

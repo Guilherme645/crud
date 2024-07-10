@@ -14,6 +14,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 import { PrimeIcons,  } from 'primeng/api';
 
+
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './pages/login/login.component';
@@ -63,7 +64,8 @@ ButtonModule,
 TableModule,
 HttpClientModule,
 MatDialogModule,
-FormsModule 
+FormsModule,
+
 
 
 

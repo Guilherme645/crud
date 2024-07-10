@@ -1,22 +1,21 @@
-
 <div class="tabela">
-  <p-table [value]="clients" sortField="price" [sortOrder]="-1" [tableStyle]="{ 'min-width': '60rem' }">
+  <p-table [value]="clients" sortField="code" [sortOrder]="-1" [tableStyle]="{ 'min-width': '60rem' }">
     <ng-template pTemplate="header">
       <tr>
         <th pSortableColumn="code" style="width:20%">
-          Nome <p-sortIcon field="code" />
+          Nome <p-sortIcon field="code"></p-sortIcon>
         </th>
         <th pSortableColumn="name" style="width:20%">
-          Email <p-sortIcon field="name" />
+          Email <p-sortIcon field="name"></p-sortIcon>
         </th>
         <th pSortableColumn="category" style="width:20%">
-          Telefone <p-sortIcon field="category" />
+          Telefone <p-sortIcon field="category"></p-sortIcon>
         </th>
         <th pSortableColumn="quantity" style="width:20%">
-          Endereço <p-sortIcon field="quantity" />
+          Endereço <p-sortIcon field="quantity"></p-sortIcon>
         </th>
         <th style="width:20%">
-          <p-button  label="Adicionar" [text]="true" [raised]="true" severity="success" />
+          <p-button mat-button (click)="openCreateDialog()" label="Adicionar" [text]="true" [raised]="true" severity="success"></p-button>
         </th>
       </tr>
     </ng-template>
@@ -31,7 +30,7 @@
           {{ client?.endereco?.estado }},
           {{ client?.endereco?.cep }}</td>
         <td>
-          <p-button icon="pi pi-pencil" [rounded]="true" [text]="true" [raised]="true" severity="info" class="button-spacing"   (click)="editClient(client)"></p-button>
+          <p-button icon="pi pi-pencil" [rounded]="true" [text]="true" [raised]="true" severity="info" class="button-spacing" (click)="editClient(client)"></p-button>
           <p-button icon="pi pi-times" [rounded]="true" [text]="true" [raised]="true" severity="danger" (click)="deleteClient(client.id)"></p-button>
         </td>
       </tr>

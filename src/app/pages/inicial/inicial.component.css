@@ -4,5 +4,11 @@
     padding-top: 20px;
     margin-top: 40px; 
   }
-  
-  
+  .small-image{
+    width: 140px;
+    margin-left: 25px;
+  }
+  .sidebar{
+margin-left: 0px;
+margin-top: -115px;
+  }

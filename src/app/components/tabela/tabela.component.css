@@ -1,9 +1,16 @@
 .tabela{
-    margin-left:0px;
-    margin-top: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left:40px;
+    margin-right: 40px;
+    margin-top: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.384); /* Sombra suave em todos os lados */
+    border-radius: 20px;
+    
 }
 .button-spacing {
     margin-right: 8px; /* Ajuste o valor conforme necessário */
+  }
+  .texto{
+    margin-top: 20px;
   }
