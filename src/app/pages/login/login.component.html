@@ -1,0 +1,42 @@
+<section class="login-component">
+  <mat-card class="login">
+
+    <div class="form-container">
+      <mat-card-header> 
+        <mat-card-title class="title-container">
+          <strong>All Cortex</strong>
+          <img src="/src/assets/allcortex.jpeg" alt="logo" class="small-image">
+        </mat-card-title>
+      </mat-card-header>
+  <form [formGroup]="loginForm">
+    <mat-card-content>
+      
+      <p>Login</p>
+    <mat-form-field appearance="outline">
+<mat-label>E-mail</mat-label>
+<input formControlName="email" matInput type="email" placeholder="Digite o seu email">
+<mat-error *ngIf="loginForm.get('email')?.errors?.['required']">email obrigatório</mat-error>
+<mat-error *ngIf="loginForm.get('email')?.errors?.['formatoEmail']">
+email com formatação inadequada</mat-error>
+    </mat-form-field>
+   <mat-form-field appearance="outline">
+<mat-label>Senha</mat-label>
+<input formControlName="senha" matInput type="password" placeholder="Digite a sua senha">
+<mat-error *ngIf="loginForm.get('senha')?.errors?.['required']">
+  Senha obrigatória
+</mat-error>
+<mat-error *ngIf="loginForm.get('senha')?.errors?.['letramauiscula']">
+  A senha tem que ter uma letra maiúscula
+</mat-error>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+      <button [disabled]="loginForm.invalid" (click)="login()" mat-raised-button>Acessar a minha conta</button>
+  </mat-card-actions>
+  <p>Ainda não possui conta?
+    <a><strong><u>Clique aqui para se cadastrar</u></strong></a>
+  </p>
+  </form>  
+  </div>
+</mat-card>
+</section>

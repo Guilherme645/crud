@@ -1,0 +1,101 @@
+{
+  "clientes": [
+    {
+      "id": "3",
+      "nome": "GUILHERME CARVALHO DA SILVA",
+      "email": "guilherme64513@gmail.com",
+      "telefone": "61984264979",
+      "endereco": {
+        "rua": "Quadra",
+        "numero": "14",
+        "cidade": "Brasília",
+        "estado": "DF",
+        "cep": "72425140"
+      }
+    },
+    {
+      "id": "4",
+      "nome": "GUILHERME CARVALHO DA SILVA",
+      "email": "guilherme64513@gmail.com",
+      "telefone": "61984264979",
+      "endereco": {
+        "rua": "Quadra",
+        "numero": "14",
+        "cidade": "Brasília",
+        "estado": "DF",
+        "cep": "72425140"
+      }
+    },
+    {
+      "id": "5",
+      "nome": "GUILHERME CARVALHO DA SILVA",
+      "email": "guilherme64513@gmail.com",
+      "telefone": "61984264979",
+      "endereco": {
+        "rua": "Quadra",
+        "numero": "14",
+        "cidade": "Brasília",
+        "estado": "DF",
+        "cep": "72425140"
+      }
+    },
+    {
+      "id": "6",
+      "nome": "GUILHERME CARVALHO DA SILVA",
+      "email": "guilherme64513@gmail.com",
+      "telefone": "61984264979",
+      "endereco": {
+        "rua": "Quadra",
+        "numero": "14",
+        "cidade": "Brasília",
+        "estado": "DF",
+        "cep": "72425140"
+      }
+    },
+    {
+      "id": "7",
+      "nome": "Mariana Lima",
+      "email": "mariana.lima@example.com",
+      "telefone": "(62) 98765-4321",
+      "endereco": {
+        "rua": "Rua das Rosas",
+        "numero": 700,
+        "cidade": "Goiânia",
+        "estado": "GO",
+        "cep": "74000-000"
+      }
+    },
+    {
+      "id": "8",
+      "nome": "Carlos Souza",
+      "email": "carlos.souza@example.com",
+      "telefone": "(11) 99876-5432",
+      "endereco": {
+        "rua": "Avenida Atlântica",
+        "numero": 300,
+        "cidade": "Rio de Janeiro",
+        "estado": "RJ",
+        "cep": "22010-000"
+      }
+    },
+    {
+      "id": "9",
+      "nome": "Patrícia Fernandes",
+      "email": "patricia.fernandes@example.com",
+      "telefone": "(84) 98765-4321"
+    },
+    {
+      "id": "10",
+      "nome": "GUILHERME CARVALHO DA SILVA",
+      "email": "guilherme64513@gmail.com",
+      "telefone": "61984264979",
+      "endereco": {
+        "rua": "Quadra",
+        "numero": "14",
+        "cidade": "Brasília",
+        "estado": "DF",
+        "cep": "72425140"
+      }
+    }
+  ]
+}

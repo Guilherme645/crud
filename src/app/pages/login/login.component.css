@@ -1,0 +1,78 @@
+.login-component {
+    max-width: 50%;
+    min-height: 74%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  
+    .login {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 68px;
+      box-shadow: -2px 2px 2px 2px rgba(0, 0, 0, 0.2);      }
+  /* buttom */
+  section {
+    display: table;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+
+  }
+  
+  /* buttom */
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 16px;
+  
+      mat-card-header {
+        margin-bottom: 20px;
+  
+        mat-card-title {
+          font-size: 32px;
+          font-weight: 400;
+        }
+      }
+  
+      mat-card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      mat-card-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: normal;
+        margin-top: 23px;
+  
+        button {
+          margin:  8px;
+          margin-bottom: 20px;
+        }
+      }
+  
+    
+      p {
+        font-size: 16px;
+        font-weight: 500;
+      }
+  
+      a {
+        cursor: pointer;
+  
+        &:active {
+          color: #551A8B;
+        }
+      }
+    }
+  }
