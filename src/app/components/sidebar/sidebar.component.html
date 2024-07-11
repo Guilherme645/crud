@@ -3,8 +3,8 @@
     <h1>Painel</h1>
     <div class="flex justify-content-center flex-wrap gap-3 mb-4">
         <p-button icon="pi pi-search" [rounded]="true" severity="secondary" /> <br><br>
-        <p-button icon="pi pi-briefcase" [rounded]="true" severity="success" /><br><br>
-        <p-button icon="pi pi-users" [rounded]="true" severity="info" /><br><br>
+        <p-button (onClick)="inicio()"icon="pi pi-home" [rounded]="true" severity="info" /><br><br>
+        <p-button (onClick)="clientes()" icon="pi pi-users" [rounded]="true" severity="info" /><br><br>
         <p-button (onClick)="out()" icon="pi pi-sign-out" [rounded]="true" severity="out" /><br>
     </div>
   </p-sidebar>

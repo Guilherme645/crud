@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Cliente } from '../clientes';
 import { ClientService } from 'src/app/services/client.service';
+import { ViaCepService } from 'src/app/services/viacep.service';
 
 @Component({
   selector: 'app-criar-cliente',
@@ -12,11 +13,13 @@ import { ClientService } from 'src/app/services/client.service';
 export class CriarClienteComponent implements OnInit {
 
   form!: FormGroup;
+  ufs: string[] = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'];
 
   constructor(
     private dialogRef: MatDialogRef<CriarClienteComponent>,
     private formBuilder: FormBuilder,
-    private clientService: ClientService
+    private clientService: ClientService,
+    private viaCepService: ViaCepService
   ) {}
 
   ngOnInit(): void {
@@ -33,7 +36,7 @@ export class CriarClienteComponent implements OnInit {
         numero: [''],
         cidade: [''],
         estado: [''],
-        cep: ['']
+        cep: ['', Validators.required]
       })
     });
   }
@@ -70,5 +73,26 @@ export class CriarClienteComponent implements OnInit {
 
   onClose(): void {
     this.dialogRef.close();
+  }
+
+  // Método para buscar o endereço a partir do CEP informado pelo usuário
+  buscarEnderecoPorCep(): void {
+    const cep = this.form.value.endereco.cep;
+    if (cep && cep.length === 8) {
+      this.viaCepService.getAddress(cep).subscribe(
+        data => {
+          this.form.patchValue({
+            endereco: {
+              rua: data.logradouro || '',
+              cidade: data.localidade || '',
+              estado: data.uf || ''
+            }
+          });
+        },
+        error => {
+          console.error('Erro ao buscar CEP:', error);
+        }
+      );
+    }
   }
 }

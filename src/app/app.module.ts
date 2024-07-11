@@ -30,6 +30,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { EditarClienteComponent } from './components/editar-cliente/editar-cliente.component';
 import { FormsModule } from '@angular/forms'; // Importe FormsModule aqui
 import { CriarClienteComponent } from './components/criar-cliente/criar-cliente.component';
+import { MatSelectModule } from '@angular/material/select';
+import { ClientesComponent } from './pages/clientes/clientes.component';
 
 
 
@@ -43,7 +45,8 @@ import { CriarClienteComponent } from './components/criar-cliente/criar-cliente.
       SidebarComponent,
       ExcluirClienteComponent,
       EditarClienteComponent,
-      CriarClienteComponent
+      CriarClienteComponent,
+      ClientesComponent
       
    ],
   imports: [
@@ -65,6 +68,8 @@ TableModule,
 HttpClientModule,
 MatDialogModule,
 FormsModule,
+MatSelectModule
+
 
 
 

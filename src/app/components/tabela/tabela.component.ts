@@ -1,11 +1,11 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Client, ClientService } from 'src/app/services/client.service';
-import { Observable } from 'rxjs';
-import { EditarClienteComponent } from '../editar-cliente/editar-cliente.component';
+import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
+import { Cliente } from '../clientes'; // Certifique-se de que o caminho está correto
+import { ClientService } from 'src/app/services/client.service';
+import { EditarClienteComponent } from '../editar-cliente/editar-cliente.component';
 import { CriarClienteComponent } from '../criar-cliente/criar-cliente.component';
-
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-tabela',
@@ -13,29 +13,30 @@ import { CriarClienteComponent } from '../criar-cliente/criar-cliente.component'
   styleUrls: ['./tabela.component.css']
 })
 export class TabelaComponent implements OnInit {
-  clients: Client[] = [];
+  clients: Cliente[] = [];
+  dataSource: MatTableDataSource<Cliente>; // Utilize MatTableDataSource para a fonte de dados
   private apiUrl = 'http://localhost:3000';
-  dataSource: any;
-  constructor(private clientService: ClientService, private http: HttpClient
-    ,private dialog: MatDialog,  ) { }
+
+  displayedColumns: string[] = ['nome', 'email', 'telefone', 'acao'];
+
+  constructor(
+    private clientService: ClientService,
+    private http: HttpClient,
+    private dialog: MatDialog
+  ) {
+    this.dataSource = new MatTableDataSource<Cliente>();
+  }
 
   ngOnInit(): void {
-    this.clientService.getClient()
-      .subscribe(
-        (response: Client[]) => {
-          this.clients = response;
-          console.log(response);
-        },
-        (error) => {
-          console.error('Erro ao buscar clientes:', error);
-        }
-      );
+    this.fetchClients();
   }
+
   fetchClients(): void {
     this.clientService.getClient()
       .subscribe(
-        (response: Client[]) => {
+        (response: Cliente[]) => {
           this.clients = response;
+          this.dataSource.data = this.clients; // Atualiza os dados do MatTableDataSource
           console.log('Clientes carregados:', response);
         },
         (error) => {
@@ -43,8 +44,8 @@ export class TabelaComponent implements OnInit {
         }
       );
   }
-  
-  editClient(cliente: Client): void {
+
+  editClient(cliente: Cliente): void {
     const dialogRef = this.dialog.open(EditarClienteComponent, {
       width: '400px',
       data: cliente // Passa o cliente para o diálogo de edição
@@ -52,17 +53,17 @@ export class TabelaComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log('O diálogo foi fechado', result);
-      // Aqui você pode atualizar a lista de clientes se necessário
+      // Atualize a lista de clientes se necessário após o fechamento do diálogo
     });
   }
 
-  deleteClient(id: number): void {
+  deleteClient(id: string): void {
     if (confirm('Tem certeza que deseja excluir este cliente?')) {
       this.http.delete(`${this.apiUrl}/clientes/${id}`)
         .subscribe(
           () => {
             console.log(`Cliente com ID ${id} excluído com sucesso.`);
-            this.fetchClients(); // Atualiza a lista de clientes
+            this.fetchClients(); // Atualiza a lista de clientes após a exclusão
           },
           (error) => {
             console.error(`Erro ao excluir cliente com ID ${id}:`, error);
@@ -70,6 +71,7 @@ export class TabelaComponent implements OnInit {
         );
     }
   }
+
   openCreateDialog(): void {
     const dialogRef = this.dialog.open(CriarClienteComponent, {
       width: '400px'
@@ -77,16 +79,8 @@ export class TabelaComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.loadClientes();
+        this.fetchClients(); // Atualiza a lista de clientes após a criação
       }
     });
   }
-
-  private loadClientes(): void {
-    this.clientService.getClient().subscribe(clientes => {
-      this.dataSource.data = clientes;
-    });
-  }
-
 }
-

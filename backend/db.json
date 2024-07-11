@@ -14,19 +14,6 @@
       }
     },
     {
-      "id": "8",
-      "nome": "Carlos Souza",
-      "email": "carlos.souza@example.com",
-      "telefone": "(11) 99876-5432",
-      "endereco": {
-        "rua": "Avenida Atlântica",
-        "numero": 300,
-        "cidade": "Rio de Janeiro",
-        "estado": "RJ",
-        "cep": "22010-000"
-      }
-    },
-    {
       "id": "9",
       "nome": "Patrícia Fernandes",
       "email": "patricia.fernandes@example.com",
@@ -48,7 +35,7 @@
         "rua": "Avenida Central",
         "numero": " 456",
         "cidade": "Rio de Janeiro",
-        "estado": " RJ",
+        "estado": "BA",
         "cep": "20000-000"
       }
     },
@@ -61,21 +48,8 @@
         "rua": "Praça das Palmeiras",
         "numero": "789",
         "cidade": "Belo Horizonte",
-        "estado": "MG",
+        "estado": "RJ",
         "cep": "30000-000"
-      }
-    },
-    {
-      "id": "5e47",
-      "nome": "Guilherme Carvalho da Silva",
-      "email": "guilherme64513@gmail.com",
-      "telefone": "61984264979",
-      "endereco": {
-        "rua": "Quadra",
-        "numero": "14",
-        "cidade": "Brasília",
-        "estado": "DF",
-        "cep": "72425140"
       }
     }
   ]

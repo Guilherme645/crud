@@ -1,35 +1,45 @@
 <form [formGroup]="form" (ngSubmit)="onSave()">
   <mat-form-field>
-    <input matInput formControlName="nome" placeholder="Nome">
+    <input matInput formControlName="nome" placeholder="Nome" required>
   </mat-form-field>
+  
   <mat-form-field>
-    <input matInput formControlName="email" placeholder="Email">
+    <input matInput formControlName="email" placeholder="Email" required>
+   
   </mat-form-field>
+  
   <mat-form-field>
-    <input matInput formControlName="telefone" placeholder="Telefone">
+    <input matInput formControlName="telefone" placeholder="Telefone" required>
   </mat-form-field>
-  <div formGroupName="endereco">
+  
+  <div formGroupName="endereco"> 
+    <mat-form-field>
+      <input matInput formControlName="cep" placeholder="CEP" (input)="buscarEnderecoPorCep()">
+    </mat-form-field>
+    
     <mat-form-field>
       <input matInput formControlName="rua" placeholder="Rua">
     </mat-form-field>
+    
     <mat-form-field>
       <input matInput formControlName="numero" placeholder="Número">
     </mat-form-field> 
+    
     <mat-form-field>
       <input matInput formControlName="cidade" placeholder="Cidade">
     </mat-form-field>
+    
     <mat-form-field>
-      <input matInput formControlName="estado" placeholder="Estado">
+      <mat-select formControlName="estado" placeholder="Estado">
+        <mat-option *ngFor="let uf of ufs" [value]="uf">{{ uf }}</mat-option>
+      </mat-select>
     </mat-form-field>
-    <mat-form-field>
-      <input matInput formControlName="cep" placeholder="CEP">
-    </mat-form-field>
+    
+   
   </div>
+  
   <div class="button-container">
-    <button mat-button type="submit">Salvar</button>
+    <button mat-button type="submit" [disabled]="!form.valid">Salvar</button>
     <button mat-button type="button" (click)="onClose()">Cancelar</button>
   </div>
 </form>
-
-      
-

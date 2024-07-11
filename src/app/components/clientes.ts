@@ -5,8 +5,8 @@ export interface Cliente{
     telefone:number,
     endereco: {
       rua:"",
-      numero: number,
+      numero: "",
       cidade: "",
       estado:"",
-      cep: number}
+      cep: ""}
 }

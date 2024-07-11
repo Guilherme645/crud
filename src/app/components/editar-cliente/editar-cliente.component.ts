@@ -11,15 +11,16 @@ import { ClientService } from 'src/app/services/client.service';
 })
 export class EditarClienteComponent implements OnInit {
 
-  form!: FormGroup; // Declarando explicitamente que form é do tipo FormGroup
-  loading = false; // Variable to indicate loading state
+  form!: FormGroup;
+  loading = false;
+  ufs: string[] = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'];
 
   constructor(
     private dialogRef: MatDialogRef<EditarClienteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Cliente,
     private formBuilder: FormBuilder,
     private clientService: ClientService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.initializeForm();
@@ -34,7 +35,7 @@ export class EditarClienteComponent implements OnInit {
         rua: [this.data.endereco?.rua],
         numero: [this.data.endereco?.numero],
         cidade: [this.data.endereco?.cidade],
-        estado: [this.data.endereco?.estado],
+        estado: [this.data.endereco?.estado, Validators.required],
         cep: [this.data.endereco?.cep]
       })
     });
@@ -42,7 +43,7 @@ export class EditarClienteComponent implements OnInit {
 
   onSave(): void {
     if (this.form.valid) {
-      this.loading = true; // Start loading
+      this.loading = true;
       const clienteAtualizado: Cliente = {
         id: this.data.id,
         nome: this.form.value.nome,
@@ -60,24 +61,21 @@ export class EditarClienteComponent implements OnInit {
       if (clienteAtualizado.id) {
         this.clientService.editarCliente(clienteAtualizado.id, clienteAtualizado).subscribe(
           () => {
-            this.loading = false; // Stop loading
+            this.loading = false;
             this.dialogRef.close(clienteAtualizado);
-            window.location.reload(); // Reload the entire page
+            window.location.reload();
           },
           (error) => {
-            this.loading = false; // Stop loading
+            this.loading = false;
             console.error('Erro ao editar cliente:', error);
-            // Handle error feedback for user
           }
         );
       } else {
-        this.loading = false; // Stop loading
+        this.loading = false;
         console.error('ID do cliente não está definido.');
-        // Tratamento para o caso em que clienteAtualizado.id é undefined
       }
     } else {
-      console.error('Formulário inválido.'); // Log form invalid
-      // Handle form invalid feedback for user
+      console.error('Formulário inválido.');
     }
   }
 

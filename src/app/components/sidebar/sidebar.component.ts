@@ -20,4 +20,10 @@ export class SidebarComponent{
 out() {
   this.router.navigate(['/login']);
 }
+clientes() {
+  this.router.navigate(['/clientes']);
+}
+inicio() {
+  this.router.navigate(['/inicial']);
+}
 }
