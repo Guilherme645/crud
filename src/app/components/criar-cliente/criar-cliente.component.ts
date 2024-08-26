@@ -60,7 +60,7 @@ export class CriarClienteComponent implements OnInit {
       this.clientService.criarCliente(novoCliente).subscribe(
         () => {
           this.dialogRef.close(novoCliente);
-          window.location.reload(); // Recarrega a página
+          window.location.reload(); 
         },
         (error) => {
           console.error('Erro ao criar cliente:', error);
@@ -75,7 +75,6 @@ export class CriarClienteComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  // Método para buscar o endereço a partir do CEP informado pelo usuário
   buscarEnderecoPorCep(): void {
     const cep = this.form.value.endereco.cep;
     if (cep && cep.length === 8) {

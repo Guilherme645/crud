@@ -32,18 +32,14 @@ export class ClientService {
   }
 
   buscarEnderecoPorCEP(cep: string): Observable<Endereco> {
-    // Formata o CEP para remover caracteres não numéricos
     cep = cep.replace(/\D/g, '');
 
-    // Verifica se o CEP possui 8 dígitos numéricos
     if (cep.length !== 8) {
       throw new Error('CEP inválido');
     }
 
-    // Monta a URL de consulta
     const url = `https://viacep.com.br/ws/${cep}/json/`;
 
-    // Realiza a requisição GET para o ViaCEP
     return this.http.get<Endereco>(url);
   }
 }

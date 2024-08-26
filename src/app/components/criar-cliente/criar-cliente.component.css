@@ -28,13 +28,11 @@ form {
     height: 36px; 
   }
   
-  /* Botão de cancelar */
   button[type="button"] {
     background-color: #83211a; 
     color: #ffffff; 
   }
   
-  /* Botão de salvar */
   button[type="submit"] {
     background-color: #245a26; 
     color: #ffffff; 

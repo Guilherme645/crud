@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
-import { Cliente } from '../clientes'; // Certifique-se de que o caminho está correto
+import { Cliente } from '../clientes'; 
 import { ClientService } from 'src/app/services/client.service';
 import { EditarClienteComponent } from '../editar-cliente/editar-cliente.component';
 import { CriarClienteComponent } from '../criar-cliente/criar-cliente.component';
@@ -14,7 +14,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class TabelaComponent implements OnInit {
   clients: Cliente[] = [];
-  dataSource: MatTableDataSource<Cliente>; // Utilize MatTableDataSource para a fonte de dados
+  dataSource: MatTableDataSource<Cliente>; 
   private apiUrl = 'http://localhost:3000';
 
   displayedColumns: string[] = ['nome', 'email', 'telefone', 'acao'];
@@ -36,7 +36,7 @@ export class TabelaComponent implements OnInit {
       .subscribe(
         (response: Cliente[]) => {
           this.clients = response;
-          this.dataSource.data = this.clients; // Atualiza os dados do MatTableDataSource
+          this.dataSource.data = this.clients; 
           console.log('Clientes carregados:', response);
         },
         (error) => {
@@ -48,12 +48,12 @@ export class TabelaComponent implements OnInit {
   editClient(cliente: Cliente): void {
     const dialogRef = this.dialog.open(EditarClienteComponent, {
       width: '400px',
-      data: cliente // Passa o cliente para o diálogo de edição
+      data: cliente 
     });
 
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log('O diálogo foi fechado', result);
-      // Atualize a lista de clientes se necessário após o fechamento do diálogo
+      
     });
   }
 
@@ -63,7 +63,7 @@ export class TabelaComponent implements OnInit {
         .subscribe(
           () => {
             console.log(`Cliente com ID ${id} excluído com sucesso.`);
-            this.fetchClients(); // Atualiza a lista de clientes após a exclusão
+            this.fetchClients(); 
           },
           (error) => {
             console.error(`Erro ao excluir cliente com ID ${id}:`, error);
@@ -79,7 +79,7 @@ export class TabelaComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.fetchClients(); // Atualiza a lista de clientes após a criação
+        this.fetchClients(); 
       }
     });
   }

@@ -12,9 +12,9 @@
       flex-direction: row;
       justify-content: center;
       margin-top: 68px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.384); /* Sombra suave em todos os lados */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.384);
     }
-        mat-form-field{
+    :is(mat-form-field){
           margin-top: 12px;
         }
 
@@ -23,7 +23,6 @@
         margin-left: 70px;
 
       }
-  /* buttom */
   section {
     display: table;
   }
@@ -34,7 +33,6 @@
 
   }
   
-  /* buttom */
     .image-container {
       display: flex;
       justify-content: center;

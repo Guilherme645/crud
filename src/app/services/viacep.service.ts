@@ -18,7 +18,7 @@ export class ViaCepService {
       .pipe(
         catchError(error => {
           console.error('Erro ao buscar CEP:', error);
-          throw error; // Tratar o erro como preferir
+          throw error; 
         })
       );
   }

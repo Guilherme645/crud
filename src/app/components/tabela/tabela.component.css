@@ -4,12 +4,12 @@
     margin-top: 60px;
     padding-left: 40px;
     padding-right: 40px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.384); /* Sombra suave em todos os lados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.384); 
     border-radius: 20px;
     
 }
 .button-spacing {
-    margin-right: 8px; /* Ajuste o valor conforme necessário */
+    margin-right: 8px; 
   }
   .texto{
     margin-top: 20px;
