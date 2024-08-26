@@ -49,6 +49,10 @@
               "outputHashing": "all",
               "optimization": true,
               "sourceMap": false,
+<<<<<<< HEAD
+=======
+              "extractCss": true,
+>>>>>>> bfcb4639b9e7aa39961e5e287900f95f33b094b6
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
